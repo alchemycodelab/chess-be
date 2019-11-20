@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Move test can not create a move given an invalid chess move 1`] = `
+exports[`Move test creates a move given a valid chess move 1`] = `
 Object {
   "__v": 0,
-  "_id": "5dd4827d0a0501235dcbf815",
+  "_id": Any<Object>,
   "from": "e2",
-  "game": "5dd4827d0a0501235dcbf814",
+  "game": Any<Object>,
+  "result": "Play-On",
   "to": "e4",
 }
 `;

@@ -15,7 +15,8 @@ describe('Move test', () => {
       to: 'e5'
     });
 
-    return move.save()
+    return move
+      .save()
       .then(() => {
         // we should never be here
         expect(false).toBeTruthy();
@@ -25,16 +26,20 @@ describe('Move test', () => {
       });
   });
 
-  it('can not create a move given an invalid chess move', () => {
+  it('creates a move given a valid chess move', () => {
     const move = new Move({
       game: mongoose.Types.ObjectId(),
       from: 'e2',
       to: 'e4'
     });
 
-    return move.save()
+    return move
+      .save()
       .then(m => {
-        expect(m).toMatchSnapshot();
+        expect(m._doc).toMatchSnapshot({
+          '_id': expect.any(Object),
+          'game': expect.any(Object),
+        });
       });
   });
 });
